@@ -6,4 +6,9 @@ This project is licensed under the Apache License, Version 2.0 - see the [LICENS
 
 ### Contact
 - Email: zhengyan.kan@pfizer.com
-- 
+
+## Requirements
+
+To run the code in this repository, you will need the following:
+
+R version 4.1.0 or higher
