@@ -15,5 +15,5 @@ R version 4.1.0 or higher
 
 ## Descriptions
 
-See "Descriptions_code_figure_table_mapping.xlsx" ![image](https://github.com/kanzhengyan/Tempus_BC_manuscript_code_share/assets/41809702/5bac01ea-0694-4d66-b32e-21f4f7f350bc)
-
+See "Descriptions_code_figure_table_mapping.xlsx"
+![Screenshot 2024-05-29 at 12 04 49 PM](https://github.com/kanzhengyan/Tempus_BC_manuscript_code_share/assets/41809702/2c4a7c69-3d05-4482-ab6f-b8ac4a0e9d15)
