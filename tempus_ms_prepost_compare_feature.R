@@ -191,18 +191,24 @@ legend("topright", fill=c('magenta'), legend=c('FDR < 10%'), border=F, bty='n', 
 #----------------------------------------
 # (6) Volcano plot
 #
+selectedlabs <- c('pam50_cor_her2', 'pam50_cor_luma',
+                  'Paloma3_F1_MYC_E2F_activation', 'Paloma3_F10_estrogen_response', 'Paloma3_F8_EMT',
+                  'proliferative_index', 'mutsig_13_sigma', 'tmb');
+selectedlabs2 <- c('nmf_factor11_proliferation', 'Paloma3_F1_MYC_E2F_activation', 'Paloma3_F9',
+                  'pam50_cor_her2', 'proliferative_index');
 foo <- df;
-EnhancedVolcano(foo, lab=foo$variable, pointSize = 8,
+EnhancedVolcano(foo, pointSize = 8,
                 x='delta', y='pval',
                 xlim=c(-200, 300), ylim=c(-1,10),
                 FCcutoff=20, pCutoff=0.05,
-                selectLab = c('pam50_cor_her2', 'pam50_cor_luma',  
-                              'Paloma3_F1_MYC_E2F_activation', 'Paloma3_F10_estrogen_response', 'Paloma3_F8_EMT',
-                              'proliferative_index', 'mutsig_13_sigma', 'tmb'),
-                boxedLabels = T, labFace='bold', xlab = '% Change',
-                drawConnectors=TRUE, colConnectors='black', widthConnectors=1,
+                lab=NA,
+                #lab=foo$variable,
+                #selectLab = selectedlabs2,
+                #drawConnectors=TRUE, colConnectors='black', widthConnectors=1,
+                #boxedLabels = T, labFace='bold', 
+                xlab = '% Change',
                 gridlines.major = F, gridlines.minor = F,
-                legendLabels = c("NS", "%Delta", "p-value", expression("p-value" ~ and ~ "% Change")),)
+                legendLabels = c("NS", "% Change", "p-value", expression("p-value" ~ and ~ "% Change")),)
 
 #----------------------------------------
 # (7) PAM50 vs. pre/post (Mosaic Plot)

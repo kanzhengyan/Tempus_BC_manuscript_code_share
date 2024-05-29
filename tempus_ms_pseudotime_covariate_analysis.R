@@ -27,7 +27,7 @@ plotfile <- paste(outdir, 'tempus_ms_pseudotime_covariate_heatmap.pdf', sep='/')
 # - molecular features
 
 # load Tempus data
-#rdata = tempus_bc();
+rdata = tempus_bc();
 sdata = rdata$sdata;
 
 # load EPG branch & node data
@@ -50,7 +50,6 @@ gscollections = gsvaobj$annotation$collection;
 #
 
 # select genesets based on correlation vs. PT
-
 genesets <- rownames(gsvadata)[grepl('h.HALLMARK', rownames(gsvadata))];
 gsva <- gsvadata[rownames(gsvadata) %in% genesets, mm$sample_id];
 cc <- cor(t(rbind(gsva, mm$pseudotime)));
@@ -73,16 +72,6 @@ gsva_cor <- gsva[rownames(gsva) %in% genesets_cor,];
 write.table(res, file=outfile, sep="\t", col.names=T, row.names=F, quote=F);
 
 # 2.1 Hallmark CSE gene signatures
-#genesets <- c('h.HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION', 'h.HALLMARK_IL6_JAK_STAT3_SIGNALING',
-#              'h.HALLMARK_INFLAMMATORY_RESPONSE', 'h.HALLMARK_GLYCOLYSIS',
-#              'h.HALLMARK_MTORC1_SIGNALING', 'h.HALLMARK_CHOLESTEROL_HOMEOSTASIS',
-#              'h.HALLMARK_ESTROGEN_RESPONSE_LATE',
-#              'h.HALLMARK_ESTROGEN_RESPONSE_EARLY', 'h.MYC_TARGETS_V1', 'h.E2F_TARGETS',
-#              'h.HALLMARK_ALLOGRAFT_REJECTION', 'h.HALLMARK_INTERFERON_GAMMA_RESPONSE', 
-#              'h.HALLMARK_PI3K_AKT_MTOR_SIGNALING', 'h.HALLMARK_HYPOXIA',
-#              'h.HALLMARK_IL2_STAT5_SIGNALING', 'h.HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY');
-#gsva <- gsvadata[rownames(gsvadata) %in% genesets,];
-#gsva <- gsva[, mm$sample_id];
 
 # sort signatures by pseudotime
 sidx <- order(mm$pseudotime, decreasing=T);
@@ -117,7 +106,7 @@ colnames(foo4) <- mm[sidx,]$sample_id;
 #
 
 # Graphics output file
-pdf(file=plotfile, onefile=T, height=10, width=40, pointsize=12);
+pdf(file=plotfile, onefile=T, height=15, width=33, pointsize=12);
 
 colors_set1 = brewer.pal(5, 'Set1')
 
@@ -130,44 +119,49 @@ annot_colors = list(
 )
 
 # pseudotime sorted as barplot
-ha1 = HeatmapAnnotation(Pseudotime=anno_barplot(mm[sidx,]$pseudotime, height = unit(1, "cm"), 
+ha1 = HeatmapAnnotation(Pseudotime=anno_barplot(mm[sidx,]$pseudotime, height = unit(1, "cm"),
                                                 border=F, gp = gpar(fill = "black")),
-                        Proliferative=anno_barplot(mm[sidx,]$proliferative_index, height = unit(1, "cm"), 
-                                                   border=F, gp = gpar(fill = "black")));
+                        Proliferative_Index=anno_barplot(mm[sidx,]$proliferative_index, height = unit(1, "cm"), 
+                                                   border=F, gp = gpar(fill = "black")),
+                                                   annotation_name_gp = gpar(fontsize=20));
 
 # features (categorical) - top annotation
 features <- c('pre_post', 'icluster', 'subtype_pam50', 'branch_epg20')
 anno_df <- data.frame(mm[sidx,features]);
 rownames(anno_df) <- mm[sidx,]$sample_id;
 colnames(anno_df) <- c('prepost', 'icluster', 'pam50', 'branch');
-col_ha = HeatmapAnnotation(df=anno_df, col=annot_colors)
+col_ha = HeatmapAnnotation(df=anno_df, col=annot_colors, 
+                           annotation_name_gp = gpar(fontsize=20))
 
 ht1 <- Heatmap(as.matrix(foo1), cluster_columns=F, cluster_rows=T, 
                row_title = "Hallmark",
-               show_column_names=F, height = nrow(foo1)*unit(4, "mm"), width = ncol(foo1)*unit(2.5, "mm"),
+               row_names_gp = grid::gpar(fontsize=17),
+               show_column_names=F, height = nrow(foo1)*unit(5, "mm"), width = ncol(foo1)*unit(2, "mm"),
                name='Hallmark');
 
 ht2 <- Heatmap(as.matrix(foo2), cluster_columns=F, cluster_rows=T, 
                top_annotation = col_ha,
                row_title='Gene',
-               show_column_names=F, height = nrow(foo2)*unit(4, "mm"), width = ncol(foo2)*unit(2.5, "mm"),
+               row_names_gp = grid::gpar(fontsize=17),
+               show_column_names=F, height = nrow(foo2)*unit(5, "mm"), width = ncol(foo2)*unit(2, "mm"),
                name='Gene');
 
 ht3 <- Heatmap(as.matrix(foo3), cluster_columns=F, cluster_rows=T, 
                row_title='Paloma3',
-               show_column_names=F, height = nrow(foo3)*unit(4, "mm"), width = ncol(foo3)*unit(2.5, "mm"),
+               row_names_gp = grid::gpar(fontsize=17),
+               show_column_names=F, height = nrow(foo3)*unit(5, "mm"), width = ncol(foo3)*unit(2, "mm"),
                name='Paloma3');
 
 ht4 <- Heatmap(as.matrix(foo4), cluster_columns=F, cluster_rows=T, 
                row_title='PAM50',
-               show_column_names=F, height = nrow(foo4)*unit(4, "mm"), width = ncol(foo4)*unit(2.5, "mm"),
+               row_names_gp = grid::gpar(fontsize=17),
+               show_column_names=F, height = nrow(foo4)*unit(5, "mm"), width = ncol(foo4)*unit(2, "mm"),
                name='PAM50');
-
 
 # vertical concatenation of heatmaps
 ht_list <- ha1 %v% ht2 %v% ht3 %v% ht1
-draw(ht_list, heatmap_legend_side="left", annotation_legend_side="left", 
-     legend_grouping = "original")
+draw(ht_list, heatmap_legend_side="left", annotation_legend_side="left",
+     legend_grouping = "original", legend_labels_gp = gpar(fontsize = 25))
 
 dev.off();
 
