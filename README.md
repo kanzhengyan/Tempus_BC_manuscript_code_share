@@ -1,6 +1,6 @@
 ## Overview
 
-This repository contains the source code associated with the manuscript titled ""Real-world clinical genomics analysis revealed a dichotomy between ER-independent and ER-dependent mechanisms of drug resistance to CDK4/6i plus endocrine therapies in HR+/HER2- metastatic breast cancers" 
+This repository contains the source code, input and output data associated with the manuscript titled ""Real-world clinical genomics analysis revealed bifurcation of ER-independent and ER-dependent mechanisms of drug resistance to CDK4/6i plus endocrine therapies in HR+/HER2- metastatic breast cancers" 
 
 This project is licensed under the Apache License, Version 2.0 - see the [LICENSE](LICENSE) file for details.
 
@@ -15,5 +15,4 @@ R version 4.1.0 or higher
 
 ## Descriptions
 
-See "Descriptions_code_figure_table_mapping.xlsx"
-![Screenshot 2024-05-29 at 12 04 49 PM](https://github.com/kanzhengyan/Tempus_BC_manuscript_code_share/assets/41809702/2c4a7c69-3d05-4482-ab6f-b8ac4a0e9d15)
+Each first-level folder contains code, input and output files corresponding to a subset of Figures/Tables in the manuscript. Inside each folder, the "Input" folder contains all input data files required running the code and the "Output.Manuscript" folder contains all output files. For example, the "Fig1.FigS4-S6.prepost_compare_feature" folder contains code/input/output for reproducing plots used in Figures 1 and Supplementary Figures 4, 5, 6.
