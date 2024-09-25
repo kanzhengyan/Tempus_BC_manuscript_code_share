@@ -1,0 +1,152 @@
+variable	analysis	order	feature_type	variable_type
+sample_id	clinical	1	clinical	character
+patient_id	clinical	2	clinical	character
+pre_post	clinical	3	clinical	binary
+pre_post_pfe	clinical	4	clinical	categorical
+histology	clinical	5	clinical	categorical
+procedure_type	clinical	6	clinical	categorical
+dna_assay	clinical	7	clinical	categorical
+dna_match_type	clinical	8	clinical	categorical
+rna_assay	clinical	9	clinical	categorical
+pfs1	clinical	10	clinical	numerical
+pfs1_censored	clinical	11	clinical	binary
+subtype_pam50	PAM50	12	molecular	categorical
+pam50_cor_basal	PAM50	13	molecular	numerical
+pam50_cor_her2	PAM50	14	molecular	numerical
+pam50_cor_luma	PAM50	15	molecular	numerical
+pam50_cor_lumb	PAM50	16	molecular	numerical
+pam50_cor_normal	PAM50	17	molecular	numerical
+tissue_site	clinical	18	clinical	categorical
+tissue_origin	clinical	19	clinical	categorical
+tumor_purity_pathologist	clinical	20	clinical	numerical
+tumor_purity_tempus	clinical	21	clinical	numerical
+tmb	molecular	22	molecular	numerical
+tmb_norm	molecular	23	molecular	numerical
+cyt_score	molecular	24	molecular	numerical
+facets_tumor_purity	FACETS	25	molecular	numerical
+hrd_index	molecular	26	molecular	numerical
+proliferative_index	molecular	27	molecular	numerical
+estimate_stromalscore	ESTIMATE	28	molecular	numerical
+estimate_immunescore	ESTIMATE	29	molecular	numerical
+estimate_score	ESTIMATE	30	molecular	numerical
+estimate_tumor_purity	ESTIMATE	31	molecular	numerical
+facets_ploidy	FACETS	32	molecular	numerical
+facets_loh	FACETS	33	molecular	numerical
+facets_telomeric_ai	FACETS	34	molecular	numerical
+facets_lst	FACETS	35	molecular	numerical
+mutsig_1_sigma	Mutation signature (SigMA)	37	molecular	numerical
+mutsig_2_sigma	Mutation signature (SigMA)	38	molecular	numerical
+mutsig_3_sigma	Mutation signature (SigMA)	39	molecular	numerical
+mutsig_13_sigma	Mutation signature (SigMA)	40	molecular	numerical
+mutsig_sigma_status	Mutation signature (SigMA)	41	molecular	categorical
+nmf_factor1_bone_specific	NMF de novo	42	molecular	numerical
+nmf_factor2_basal	NMF de novo	43	molecular	numerical
+nmf_factor3_ER_expr	NMF de novo	44	molecular	numerical
+nmf_factor4_ER_HER2_expr	NMF de novo	45	molecular	numerical
+nmf_factor5_lumA	NMF de novo	46	molecular	numerical
+nmf_factor6_immune	NMF de novo	47	molecular	numerical
+nmf_factor7_liver_specific	NMF de novo	48	molecular	numerical
+nmf_factor8_ER_response	NMF de novo	49	molecular	numerical
+nmf_factor9_EMT	NMF de novo	50	molecular	numerical
+nmf_factor10_stomach_colon_specific	NMF de novo	51	molecular	numerical
+nmf_factor11_proliferation	NMF de novo	52	molecular	numerical
+nmf_factor12_HER2_expr	NMF de novo	53	molecular	numerical
+Paloma3_F1_MYC_E2F_activation	NMF PALOMA3	54	molecular	numerical
+Paloma3_F2	NMF PALOMA3	55	molecular	numerical
+Paloma3_F3	NMF PALOMA3	56	molecular	numerical
+Paloma3_F4	NMF PALOMA3	57	molecular	numerical
+Paloma3_F5	NMF PALOMA3	58	molecular	numerical
+Paloma3_F6	NMF PALOMA3	59	molecular	numerical
+Paloma3_F7_IFNG_response	NMF PALOMA3	60	molecular	numerical
+Paloma3_F8_EMT	NMF PALOMA3	61	molecular	numerical
+Paloma3_F9	NMF PALOMA3	62	molecular	numerical
+Paloma3_F10_estrogen_response	NMF PALOMA3	63	molecular	numerical
+Paloma3_F11	NMF PALOMA3	64	molecular	numerical
+Paloma3_F12	NMF PALOMA3	65	molecular	numerical
+Paloma3_F13	NMF PALOMA3	66	molecular	numerical
+Paloma3_F14_liver_specific	NMF PALOMA3	67	molecular	numerical
+est_immune_cells	Immune cell fraction (est)	68	molecular	numerical
+est_b_cells	Immune cell fraction (est)	69	molecular	numerical
+est_cd4_cells	Immune cell fraction (est)	70	molecular	numerical
+est_cd8_cells	Immune cell fraction (est)	71	molecular	numerical
+est_mac_cells	Immune cell fraction (est)	72	molecular	numerical
+est_nk_cells	Immune cell fraction (est)	73	molecular	numerical
+brca_pathogenic_mutation	germline	74	molecular	binary
+bc_susceptibility_gene_pathogenic_mutation	germline	75	molecular	binary
+MUT.RB1	somatic mutation	76	genomic	binary
+MUT.PIK3CA	somatic mutation	77	genomic	binary
+MUT.PTEN	somatic mutation	78	genomic	binary
+MUT.GATA3	somatic mutation	79	genomic	binary
+MUT.ESR1	somatic mutation	80	genomic	binary
+MUT.TP53	somatic mutation	81	genomic	binary
+MUT.KMT2C	somatic mutation	82	genomic	binary
+MUT.AKT1	somatic mutation	83	genomic	binary
+MUT.FGFR2	somatic mutation	84	genomic	binary
+MUT.KRAS	somatic mutation	85	genomic	binary
+MUT.HRAS	somatic mutation	86	genomic	binary
+MUT.ERBB2	somatic mutation	87	genomic	binary
+MUT.FAT1	somatic mutation	88	genomic	binary
+AMP.MYC	copy number amplification	89	genomic	binary
+AMP.FGFR1	copy number amplification	90	genomic	binary
+AMP.FGFR2	copy number amplification	91	genomic	binary
+AMP.CCND1	copy number amplification	92	genomic	binary
+AMP.CCNE1	copy number amplification	93	genomic	binary
+AMP.MDM2	copy number amplification	94	genomic	binary
+AMP.KAT6A	copy number amplification	95	genomic	binary
+AMP.AKT1	copy number amplification	96	genomic	binary
+AMP.AURKA	copy number amplification	97	genomic	binary
+AMP.MDM4	copy number amplification	98	genomic	binary
+AMP.PPM1D	copy number amplification	99	genomic	binary
+AMP.RPTOR	copy number amplification	100	genomic	binary
+DEL.PTEN	copy number deletion	101	genomic	binary
+DEL.RB1	copy number deletion	102	genomic	binary
+DEL.MAP2K4	copy number deletion	103	genomic	binary
+DEL.CDKN2A	copy number deletion	104	genomic	binary
+DEL.CDKN1B	copy number deletion	105	genomic	binary
+DEL.FAT1	copy number deletion	106	genomic	binary
+EXPR.ESR1	gene expression	107	gene expression	numerical
+EXPR.PGR	gene expression	108	gene expression	numerical
+EXPR.ERBB2	gene expression	109	gene expression	numerical
+EXPR.CCNE1	gene expression	110	gene expression	numerical
+EXPR.CCNE2	gene expression	111	gene expression	numerical
+EXPR.CDK6	gene expression	112	gene expression	numerical
+EXPR.CCND1	gene expression	113	gene expression	numerical
+h.HALLMARK_MYC_TARGETS_V1	gene signature (GSVA)	114	gene expression	numerical
+h.HALLMARK_E2F_TARGETS	gene signature (GSVA)	115	gene expression	numerical
+h.HALLMARK_PI3K_AKT_MTOR_SIGNALING	gene signature (GSVA)	116	gene expression	numerical
+h.HALLMARK_ESTROGEN_RESPONSE_EARLY	gene signature (GSVA)	117	gene expression	numerical
+h.HALLMARK_FATTY_ACID_METABOLISM	gene signature (GSVA)	118	gene expression	numerical
+h.HALLMARK_CHOLESTEROL_HOMEOSTASIS	gene signature (GSVA)	119	gene expression	numerical
+h.HALLMARK_XENOBIOTIC_METABOLISM	gene signature (GSVA)	120	gene expression	numerical
+h.HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION	gene signature (GSVA)	121	gene expression	numerical
+h.HALLMARK_INFLAMMATORY_RESPONSE	gene signature (GSVA)	122	gene expression	numerical
+h.HALLMARK_APOPTOSIS	gene signature (GSVA)	123	gene expression	numerical
+brca2_germline	germline	124	molecular	binary
+chek2_germline	germline	125	molecular	binary
+atm_germline	germline	126	molecular	binary
+ddr_germline	germline	127	molecular	binary
+exposure_adjuvant_endocrine	clinical	128	clinical	binary
+exposure_adjuvant_chemo	clinical	129	clinical	binary
+exposure_adjuvant	clinical	130	clinical	binary
+exposure_met_before_cdki_endocrine	clinical	131	clinical	binary
+exposure_met_before_cdki_chemo	clinical	132	clinical	binary
+exposure_met_before_cdki	clinical	133	clinical	binary
+exposure_met_before_biopsy_endocrine	clinical	134	clinical	binary
+exposure_met_before_biopsy_chemo	clinical	135	clinical	binary
+exposure_met_before_biopsy	clinical	136	clinical	binary
+EXPR.FOXA1	gene expression	137	gene expression	numerical
+EXPR.SPDEF	gene expression	138	gene expression	numerical
+EXPR.CDK2	gene expression	139	gene expression	numerical
+EXPR.CCND3	gene expression	140	gene expression	numerical
+h.HALLMARK_WNT_BETA_CATENIN_SIGNALING	gene signature (GSVA)	141	gene expression	numerical
+c2_cgp.SMID_BREAST_CANCER_ERBB2_UP	gene signature (GSVA)	142	gene expression	numerical
+MUT.CDKN2A	somatic mutation	143	genomic	binary
+pseudotime	trajectory inference	144	new	numerical
+branch_epg20	trajectory inference	145	new	categorical
+node_epg20	trajectory inference	146	new	categorical
+ic_pam50	integrative clustering	148	new	categorical
+GOF.ESR1	somatic mutation	149	new	binary
+LOF.RB1	somatic mutation	150	new	binary
+icluster	integrative clustering	147	new	categorical
+organ	clinical	151	new	categorical
+subcohorts	clinical	152	new	categorical
